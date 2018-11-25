@@ -3,7 +3,7 @@
     "displayName": "Lyst",
     "description": "Todo list helper",
     "version": "0.0.1",
-    "publisher": "morganlaco",
+    "publisher": "morgancodes",
     "engines": {
         "vscode": "^1.29.0"
     },
