@@ -10,6 +10,6 @@ Quick icon tool for marking text checklists
 
 2. Place your cursor on the word.
 
-3. Run the `Lyst` command from the command palette (`⇧ ⌘ P`).
+3. Run the `Lyst` command from the command palette (`Cmd Shift P`).
 
 4. Run `Lyst` again to toggle an item's completion state.
