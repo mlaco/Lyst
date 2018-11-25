@@ -3,12 +3,17 @@
     "displayName": "Lyst",
     "description": "Todo list helper",
     "version": "0.0.1",
+    "publisher": "morganlaco",
     "engines": {
         "vscode": "^1.29.0"
     },
     "categories": [
         "Other"
     ],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mlaco/Lyst.git"
+	},
     "activationEvents": [
         "onCommand:extension.lyst"
     ],
