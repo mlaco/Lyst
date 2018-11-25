@@ -2,7 +2,7 @@
     "name": "lyst",
     "displayName": "Lyst",
     "description": "Todo list helper",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "morgancodes",
     "engines": {
         "vscode": "^1.29.0"
@@ -10,19 +10,21 @@
     "categories": [
         "Other"
     ],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/mlaco/Lyst.git"
-	},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mlaco/Lyst.git"
+    },
     "activationEvents": [
         "onCommand:extension.lyst"
     ],
     "main": "./extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.lyst",
-            "title": "Lyst"
-        }]
+        "commands": [
+            {
+                "command": "extension.lyst",
+                "title": "Lyst"
+            }
+        ]
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
