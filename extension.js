@@ -21,25 +21,23 @@ function activate(context) {
             return; // No open text editor
         }
 
-        let position = editor.selection.anchor
-        let range = editor.document.getWordRangeAtPosition(position)
-        let text = editor.document.getText(range)
         
-        let bigRange = new vscode.Range(
-            range.start.line, Math.max(range.start.character - 1, 0),
-            range.end.line, range.end.character + 1
-        )
-        let nRange = editor.document.validateRange(bigRange)
-        let bigText = editor.document.getText(nRange);
-
-        if (bigText === ":open:") {
-            editor.edit(eb => eb.replace(bigRange, "📋"))
-        } else if (bigText === ":check:") {
-            editor.edit(eb => eb.replace(bigRange, "✅"))
-        } else if (text === "📋") {
-            editor.edit(eb => eb.replace(range, "✅"))
-        } else if (text === "✅") {
-            editor.edit(eb => eb.replace(range, "📋"))
+        try {
+            let position = editor.selection.start
+            let range = editor.document.getWordRangeAtPosition(position)
+            let text = editor.document.getText(range)
+            
+            if (text === "open") {
+                editor.edit(eb => eb.replace(range, "📋"))
+            } else if (text === "check") {
+                editor.edit(eb => eb.replace(range, "✅"))
+            } else if (text === "📋") {
+                editor.edit(eb => eb.replace(range, "✅"))
+            } else if (text === "✅") {
+                editor.edit(eb => eb.replace(range, "📋"))
+            }
+        } catch (error) {
+            vscode.window.showErrorMessage(error.stack)
         }
     });
 
